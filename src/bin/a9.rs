@@ -9,4 +9,25 @@
 // * Destructure the return value into two variables
 // * Use an if..else if..else block to determine what to print
 
-fn main() {}
+fn main() {
+    let point1 = (0, 5);
+    let point2 = (0, 4);
+    let point3 = (0, 6);
+    check(point1);
+    check(point2);
+    check(point3);
+}
+
+fn check(point: (i32, i32)) -> (i32, i32) {
+    let (x, y) = point;
+
+    if y > 5 {
+        println!("great");
+    } else if y < 5 {
+        println!("less");
+    } else {
+        println!("equal");
+    }
+
+    (x, y)
+}

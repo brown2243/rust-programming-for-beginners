@@ -8,4 +8,10 @@
 // * Use a function to display the result
 // * Use the "{:?}" token in the println macro to display the result
 
-fn main() {}
+fn main() {
+    let ans = add(1, 5);
+    println!("{}", ans);
+}
+fn add(a: i32, b: i32) -> i32 {
+    a + b
+}

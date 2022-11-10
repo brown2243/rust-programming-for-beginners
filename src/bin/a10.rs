@@ -12,4 +12,8 @@
 // * Use a match expression to determine which message
 //   to print
 
-fn main() {}
+fn main() {
+    let val = 101;
+    let result = val > 100;
+    println!("{}", result);
+}
