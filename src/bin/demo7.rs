@@ -7,8 +7,28 @@ struct Ticket {
     event: String,
     price: i32,
 }
+#[derive(Debug)]
+struct Customer {
+    age: Option<i32>,
+    email: String,
+}
 
 fn main() {
+    let mark = Customer {
+        age: Some(22),
+        email: "mark@gmail.com".to_string(),
+    };
+    // println!("{:#?}", mark);
+    let becky = Customer {
+        age: None,
+        email: "becky@gmail.com".to_string(),
+    };
+    match becky.age {
+        Some(age) => println!("{}", age),
+        None => println!("None "),
+    }
+
+    //
     let n = 3;
     match n {
         3 => println!("three"),
