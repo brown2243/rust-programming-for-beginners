@@ -22,4 +22,39 @@
 // * Print whether the employee may access the building
 //   * Must use a function that utilizes the question mark operator to do this
 
-fn main() {}
+enum Roles {
+    Line,
+    Kitchen,
+    Assembly,
+}
+enum Building {
+    Maintenance,
+    Marketing,
+    Managers,
+}
+struct Employees {
+    role: Roles,
+    place: Building,
+}
+
+fn check_role(employees: &Employees) -> Result<(), String> {
+    return match employees.role {
+        Roles::Assembly => Ok(()),
+        _ => Err("Failed".to_owned()),
+    };
+}
+fn check_wrap(employees: &Employees) -> Result<(), String> {
+    let ans = check_role(&employees)?;
+    println!("{:#?}", ans);
+    Ok(())
+}
+
+fn main() {
+    let brown = Employees {
+        role: Roles::Assembly,
+        place: Building::Managers,
+    };
+
+    let ans = check_wrap(&brown);
+    println!("{:#?}", ans);
+}
