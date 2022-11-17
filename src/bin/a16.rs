@@ -11,6 +11,7 @@
 // * Use a struct containing the student's name and locker assignment
 // * The locker assignment should use an Option<i32>
 
+/// doc test
 struct Student {
     name: String,
     locker: Option<i32>,
